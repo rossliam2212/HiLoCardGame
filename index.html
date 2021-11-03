@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hi-Lo v2</title>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- Card -->
+    <div class="card">
+      <div class="card-inner">
+        <!-- Back of Card -->
+        <div class="card-face card-face-back">
+          <span class="card-logo">LR</span>
+        </div>
+        <!-- Front of Card -->
+        <div class="card-face card-face-front">
+          <span id="topNumber" class="card-top-number">2</span>
+          <span id="logo" class="card-logo-front">LR</span>
+          <span id="bottomNumber" class="card-bottom-number">2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls & Bets Placed Sections -->
+    <section>
+      <!-- Controls Section -->
+      <div class="controls-wrapper">
+        <div class="flip-button-wrapper">
+          <!-- Flip Button -->
+          <button id="flipButton" class="flip-button" disabled>Flip</button>
+        </div>
+        <!-- Controls Container -->
+        <div class="controls-container">
+          <!-- Left Side of Controls Container -->
+          <div class="controls-left">
+            <!-- Balance -->
+            <h3 class="balance">
+              Balance: <span class="euro-symbol">€</span
+              ><span id="balance">10000</span>
+              <span id="addBalance">+</span>
+            </h3>
+            <!-- Hi Button (disabled until the first card is flipped)-->
+            <button id="highButton" class="normal-button large-button" disabled>
+              Hi
+              <span id="hiMultiplier" class="multiplier">?x</span>
+              <span class="hi-range">
+                <span class="hi-low-number">?</span>
+                -
+                <span class="hi-high-number">?</span>
+              </span>
+              <span class="hi-bet-placed"></span>
+            </button>
+            <!-- Bet Input -->
+            <label>Bet: €</label>
+            <input type="text" id="userBet" autocomplete="off" />
+            <!-- Lo Button (disabled until the first card is flipped) -->
+            <button id="lowButton" class="normal-button large-button" disabled>
+              Lo
+              <span id="loMultiplier" class="multiplier">?x</span>
+              <span class="lo-range">
+                <span class="lo-low-number">?</span>
+                -
+                <span class="lo-high-number">?</span>
+              </span>
+              <span class="lo-bet-placed"></span>
+            </button>
+
+            <h3>
+              Status:
+              <span id="status" class="status-message-normal">Working.</span>
+            </h3>
+          </div>
+          <!-- Right Side of Controls Container -->
+          <div class="controls-right">
+            <!-- Red Button -->
+            <button id="redButton" class="red-button large-button">
+              Red
+              <span class="multiplier">2x</span>
+              <span class="red-bet-placed"></span>
+            </button>
+            <!-- Black Button -->
+            <button id="blackButton" class="black-button large-button">
+              Black
+              <span class="multiplier">2x</span>
+              <span class="black-bet-placed"></span>
+            </button>
+            <!-- 2 - 10 Button -->
+            <button id="numbersButton" class="normal-button large-button">
+              2 - 10
+              <span class="multiplier">1.5x</span>
+              <span class="numbers-bet-placed"></span>
+            </button>
+            <!-- J, Q, K, A Button -->
+            <button id="facesButton" class="normal-button large-button">
+              J, Q, K, A
+              <span class="multiplier">3x</span>
+              <span class="faces-bet-placed"></span>
+            </button>
+            <!-- Short Buttons -->
+            <div class="short-buttons">
+              <!-- K, A Button -->
+              <button id="kingAceButton" class="normal-button small-button">
+                K, A
+                <span class="multiplier">6x</span>
+                <span class="king-ace-bet-placed"></span>
+              </button>
+              <!-- A Button -->
+              <button id="aceButton" class="normal-button small-button">
+                A
+                <span class="multiplier">12x</span>
+                <span class="ace-bet-placed"></span>
+              </button>
+            </div>
+            <!-- Joker Button -->
+            <button id="jokerButton" class="joker-button large-button">
+              Joker
+              <span class="multiplier">24x</span>
+              <span class="joker-bet-placed"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Bets Placed & Previous Cards Section -->
+      <div class="bets-placed-wrapper">
+        <!-- Bets Placed Table -->
+        <div class="bets-placed-container">
+          <h3>Bets Placed:</h3>
+          <table id="betsPlacedTable">
+            <tr>
+              <th>Bet</th>
+              <th>€</th>
+              <th>Outcome</th>
+            </tr>
+          </table>
+        </div>
+        <!-- Previous Cards -->
+        <div class="previous-card-container">
+        </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
